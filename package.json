@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "NITRO_PRESET=cloudflare-pages nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "NITRO_PRESET=cloudflare-pages nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
