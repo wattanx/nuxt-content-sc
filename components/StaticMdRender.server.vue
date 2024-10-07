@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import fsp from 'node:fs/promises';
 import sanitizeHtml from 'sanitize-html';
 import { marked } from 'marked';
-const { data } = await useFetch('/api/example');
 
-const html = await marked(data.value || '');
+const content = await fsp.readFile('content/example.md', 'utf-8');
+const html = await marked(content || '');
 const sanitizedHtml = sanitizeHtml(html);
 </script>
 
