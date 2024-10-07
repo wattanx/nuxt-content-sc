@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-auto">
-    <StaticMarkdownRender path="/example" />
+    <ContentDoc path="/example" />
   </div>
 </template>
 
