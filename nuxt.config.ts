@@ -13,14 +13,22 @@ export default defineNuxtConfig({
     componentIslands: true,
   },
   nitro: {
+    serverAssets: [{ baseName: 'content', dir: './content' }],
     experimental: {
       wasm: true,
     },
   },
   content: {
-    highlight: {
-      theme: 'github-dark',
-      langs: ['js', 'ts', 'html', 'css', 'vue'],
+    experimental: {
+      sqliteConnector: 'native',
+    },
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'github-dark',
+          langs: ['js', 'ts', 'html', 'css', 'vue'],
+        },
+      },
     },
   },
 });

@@ -5,11 +5,11 @@ type Props = {
 
 const props = defineProps<Props>();
 
-const value = await queryContent(props.path!).findOne();
+const value = await queryCollection('content').path(props.path).first();
 </script>
 
 <template>
   <div>
-    <ContentRendererMarkdown :value="value" />
+    <ContentRenderer v-if="value" :value="value" />
   </div>
 </template>
